@@ -549,13 +549,6 @@
     <string name="ambient_display_screen_title">Xtended Ambient Display</string>
     <string name="ambient_display_screen_summary">Custom Ambient Display Configuration</string>
 
-    <!-- Quick Settings brightness slider -->
-    <string name="brightness_slider_config">Brightness Slider Config</string>
-    <string name="qs_brightness_slider_title">Show Brightness slider</string>
-    <string name="qs_brightness_slider_summary">Toggle to show a brightness slider in the qs panel</string>
-    <string name="qs_brightness_position_bottom_title">Brightness slider at bottom</string>
-    <string name="qs_brightness_position_bottom_summary">Show a brightness slider on bottom quick settings</string>
-
     <!-- Brightness icon-->
     <string name="brightness_icon_title">Brightness icon</string>
     <string name="brightness_icon_summary">Show a brightness icon along with the brighness slider to adjust auto-brightness</string>
