@@ -44,10 +44,12 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
     private static final String SMS_BREATH = "sms_breath";
     private static final String MISSED_CALL_BREATH = "missed_call_breath";
     private static final String VOICEMAIL_BREATH = "voicemail_breath";
+    private static final String CUSTOM_STATUSBAR_HEIGHT = "custom_statusbar_height";
 
     private SwitchPreference mSmsBreath;
     private SwitchPreference mMissedCallBreath;
     private SwitchPreference mVoicemailBreath;
+    private CustomSeekBarPreference mCustomStatusbarHeight;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -84,6 +86,12 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
                 prefSet.removePreference(mMissedCallBreath);
                 prefSet.removePreference(mVoicemailBreath);
             }
+
+	mCustomStatusbarHeight = (CustomSeekBarPreference) findPreference(CUSTOM_STATUSBAR_HEIGHT);
+        int customStatusbarHeight = Settings.System.getIntForUser(getActivity().getContentResolver(),
+                Settings.System.CUSTOM_STATUSBAR_HEIGHT, getResources().getDimensionPixelSize(com.android.internal.R.dimen.status_bar_height), UserHandle.USER_CURRENT);
+        mCustomStatusbarHeight.setValue(customStatusbarHeight);
+        mCustomStatusbarHeight.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -102,7 +110,12 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
                 boolean value = (Boolean) objValue;
                 Settings.System.putInt(getContentResolver(), VOICEMAIL_BREATH, value ? 1 : 0);
                 return true;
-            }
+            }else if (preference == mCustomStatusbarHeight) {
+            int value = (Integer) newValue;
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.CUSTOM_STATUSBAR_HEIGHT, value, UserHandle.USER_CURRENT);
+            return true;
+	    }
         return false;
     }
 
