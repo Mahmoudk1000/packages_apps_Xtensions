@@ -1625,4 +1625,9 @@
 
     <!-- Custom statusbar hight -->
     <string name="custom_statusbar_height_tile">Statusbar Height</string>
+
+
+    <!-- Statusbar dual row -->
+    <string name="statusbar_dual_row_title">Dual Row</string>
+    <string name="statusbar_dual_row_summary">Enable dual row statusbar for notifications</string>
 </resources>
