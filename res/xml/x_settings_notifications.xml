@@ -18,6 +18,10 @@
     android:title="@string/notifications_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <PreferenceCategory
+         android:key="heads_up_category"
+         android:title="@string/heads_up_category_title" >
+
     <!-- Heads up -->
     <Preference
         android:key="heads_up_notifications"
@@ -61,6 +65,7 @@
         android:summary="@string/toast_icon_summary"
         android:defaultValue="false" />
 
+    </PreferenceCategory>
     <PreferenceCategory
         android:key="light_cat"
         android:title="@string/light_settings_header" >

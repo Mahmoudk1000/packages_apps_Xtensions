@@ -18,6 +18,10 @@
     android:title="@string/gestures_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <PreferenceCategory
+         android:key="gesture_category"
+         android:title="@string/gesture_category_title" >
+
     <Preference
         android:key="gesture_settings"
         android:title="@string/aosp_gesture_preference"
@@ -41,6 +45,7 @@
         android:dependency="torch_long_press_power_gesture"
         android:persistent="false" />
 
+    </PreferenceCategory>
     <PreferenceCategory
          android:key="dtts_category"
          android:title="@string/dtts_category_header" >
